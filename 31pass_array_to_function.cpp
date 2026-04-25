@@ -17,8 +17,10 @@ int main(){
 double add(double prices[] , int size){
     double total=0;
 
-    for( double i: prices){
-        total +=prices;
-    }
+   for (int i = 0; i < size; i++)
+   {
+    total=total+prices[i];
+   }
+return total;   
 
 }
