@@ -19,9 +19,32 @@ int main()
         cout << numbers[i] << " ";
     }
     bubblesort(numbers, size);
+
+ cout<<"the sorted algo is as follows\n";
+for (int i = 0; i < size; i++)
+{
+   
+    cout << numbers[i] << " \n";   
+}
 }
 
-void bubblesort(int numbers[],int size){
+void bubblesort(int numbers[],int size){ 
+    using std::cout;
+    using std::cin;
+    using std::string;
+    int temp=0;
+    for (int i = 0; i < size-1; i++)
+    {
+        for (int j = 0; j < size-1-i; j++)
+        {
+
+            if( numbers[j]>numbers[j+1]){
+            temp=numbers[j];
+            numbers[j]=numbers[j+1];
+            numbers[j+1]=temp;}
+        }
+        
+    }
     
 
 
