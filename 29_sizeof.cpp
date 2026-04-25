@@ -14,7 +14,7 @@ int main(){
 
     std::cout<< elements<<'\n';
     std::cout<< elements1<<'\n';
-.
+
 
 
 
