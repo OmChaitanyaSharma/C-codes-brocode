@@ -1,27 +1,29 @@
 #include <iostream>
-void bubblesort(int numbers[], int size);
 int main()
 {
     using std::cin;
     using std::cout;
     using std::string;
+    string temp;
+    int count=0;
+    string items[4];
+    int size = sizeof(items) / sizeof(string);
+    cout << "enter the items you want and if you want to quit just enter q\n";
+    for (int i = 0; i < size; i++)
 
-    int numbers[4];
-    cout << "enter 4 positive numbers or -1 to quit";
-    int size = sizeof(numbers) / sizeof(int);
-    int temp;
-    for (int i = 0; i < sizeof(numbers) / sizeof(int); i++)
     {
-        cin >> temp;
-        cout << '\t';
-        if (temp != -1)
+        count++;
+        std::getline(cin>>std::ws,temp);
+        if (temp == "q")
         {
-            numbers[i] = temp;
+            break;
+        }
+        else
+        {
+            items[i] = temp;
         }
     }
-
-    for (int i = 0; i < sizeof(numbers) / sizeof(int); i++)
-    {
-        cout << numbers[i] << " ";
+    for (int i = 0; i < count-1; i++){
+        cout<< "the item number " << i+1 << " is " << items[i] << "\n";
     }
 }
