@@ -34,45 +34,35 @@ void printResult(int marks[], int size)
     using std::cin;
     using std::cout;
     using std::string;
-    for (int i = 0; i < size; i++)
-    {
-        cout << "marks of student number " << i + 1 << " is " << marks[i] << '\n';
-    }
-
-    double avg = 0;
-    for (int i = 0; i < size; i++)
-    {
-        avg = avg + marks[i];
-    }
-    double avge = avg / size;
-
-    cout << "the average marks of the students is : " << avge << '\n';
-
     int max = marks[0];
+    int min = marks[0];
+    int sum = 0;
+    int count = 0;
 
     for (int i = 0; i < size; i++)
     {
+        cout << "the marks for the student number : " << i + 1 << " is " << marks[i] << '\n';
+
+        sum += marks[i];
+
         if (max < marks[i])
         {
             max = marks[i];
         }
-    }
-    cout << "the highest marks of the following is " << max << "\n";
 
-    int min = marks[0];
-
-    for (int i = 0; i < size; i++)
-    {
         if (min > marks[i])
         {
             min = marks[i];
         }
+
+        if (marks[i] >= 40)
+        {
+            count++;
+        }
     }
-    int count=0;
-    cout << "the smallest number of the following is  " << min << "\n";
-    for (int i = 0; i < size; i++)
-    {
-        if(marks[i]>=40){
-        count++;}
-    }
-    cout<<"the total number of students who have passed is " << count << '\n' ;}
+    cout << "the sum of the numbers is " << sum << "\n";
+    cout << "the average of the numbers is " << (double)sum / size << "\n";
+    cout << "students passed: " << count << "\n";
+    cout << "the max of these numbers is " << max << "\n";
+    cout << "the min of these numbers is " << min << "\n";
+}
